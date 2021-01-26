@@ -17,12 +17,14 @@ namespace PryUserMoralesHR.Controllers
         private DataContext db = new DataContext();
 
         // GET: api/People
+        [Authorize]
         public IQueryable<Person> GetPeople()
         {
             return db.People;
         }
 
         // GET: api/People/5
+        [Authorize]
         [ResponseType(typeof(Person))]
         public IHttpActionResult GetPerson(int id)
         {
@@ -36,6 +38,7 @@ namespace PryUserMoralesHR.Controllers
         }
 
         // PUT: api/People/5
+        [Authorize]
         [ResponseType(typeof(void))]
         public IHttpActionResult PutPerson(int id, Person person)
         {
@@ -71,6 +74,7 @@ namespace PryUserMoralesHR.Controllers
         }
 
         // POST: api/People
+        [Authorize]
         [ResponseType(typeof(Person))]
         public IHttpActionResult PostPerson(Person person)
         {
@@ -86,6 +90,7 @@ namespace PryUserMoralesHR.Controllers
         }
 
         // DELETE: api/People/5
+        [Authorize]
         [ResponseType(typeof(Person))]
         public IHttpActionResult DeletePerson(int id)
         {
